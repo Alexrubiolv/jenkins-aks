@@ -5,7 +5,7 @@ metadata:
   labels:
     app: jenkinsaks
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - name: ui
       port: 9080
