@@ -5,17 +5,12 @@ metadata:
   labels:
     app: jenkins
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
-    - name: ui
-      port: 9080
-      targetPort: 9080
-      protocol: TCP
-    - name: slave
+    - name: jenkins
       port: 50000
-      protocol: TCP
     - name: http
-      port: 9080
-      targetPort: 9080
+      targetPort: 8080
+      port: 80
   selector:
-    app: jenkins
+    app.kubernetes.io/name: jenkins
