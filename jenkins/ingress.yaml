@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: jenkins 
+ annotations:
+   kubernetes.io/tls-acme: "true"
+   kubernetes.io/ingress.class: "nginx"
+spec:
+  tls:
+  - hosts:
+    - jenkinsaks.com # EDIT DOMAIN NAME
+    - www.jenkinsaks.com # EDIT DOMAIN NAME
+    secretName: tls-secret
+  rules:
+    - host: jenkinsaks.com # EDIT DOMAIN NAME
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: jenkins
+              servicePort: 80
