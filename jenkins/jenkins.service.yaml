@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: jenkins
   labels:
-    app: jenkinsaks
+    app: jenkins
 spec:
   type: ClusterIP
   ports:
@@ -18,4 +18,4 @@ spec:
       port: 80
       targetPort: 9080
   selector:
-    app: jenkinsaks
+    app: jenkins
