@@ -22,7 +22,7 @@ spec:
       serviceAccountName: jenkins
       containers:
       - name: jenkins
-        image: jenkins/jenkins:latest
+        image: jenkins/jenkins:lts
         imagePullPolicy: IfNotPresent
         ports:
         - containerport: 80
